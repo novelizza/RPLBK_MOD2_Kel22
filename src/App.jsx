@@ -4,6 +4,17 @@ import Card from "./component/card.jsx";
 import React from "react";
 
 export default function App() {
+  const [data, setData] = React.useState([]);
+  const [state, setState] = React.useState(false);
+
+  const findData = (e) => {
+    const newData = DataMahasiswa.filter((mahasiswa) =>
+      mahasiswa.nim.toString().includes(e.target.value)
+    );
+    e === "" ? setData([]) : setData(newData);
+    e === "" ? setState(false) : setState(true);
+  };
+
   return (
     <div
       style={{
