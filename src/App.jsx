@@ -11,8 +11,8 @@ export default function App() {
     const newData = DataMahasiswa.filter((mahasiswa) =>
       mahasiswa.nim.toString().includes(e.target.value)
     );
-    e === "" ? setData([]) : setData(newData);
-    e === "" ? setState(false) : setState(true);
+    e.target.value === "" ? setData([]) : setData(newData);
+    e.target.value === "" ? setState(false) : setState(true);
   };
 
   return (
