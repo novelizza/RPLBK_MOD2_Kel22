@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Card(props) {
   return (
-    <div>
+    <div style={{'background-color': `${props.i % 2 === 1 ? '#1abc9c' : '#2ecc71'}`, 'margin-bottom': 10, 'width': 398, 'border-radius': 10, 'padding':5}}>
       <table>
         <tbody>
           <tr>
@@ -43,7 +43,7 @@ export default function Card(props) {
           <tr>
             <td>Tanggal Lahir</td>
             <td>:</td>
-            <td>{props.data.tanggal_lahir}</td>
+            <td>{props.data.tanggal_lahir === undefined || props.data.tanggal_lahir === null ? '-' : props.data.tanggal_lahir}</td>
           </tr>
         </tbody>
       </table>
